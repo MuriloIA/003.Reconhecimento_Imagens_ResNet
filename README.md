@@ -191,7 +191,18 @@ Na fórmula:
 
 ### 6.3 Treino e Validação do Modelo
 
+O processo de treinamento do modelo é realizado através de uma série de etapas cuidadosamente planejadas para garantir a melhor performance possível. Aqui estão os critérios usados para treinar o modelo:
 
+1. **Checkpoint Callback**: Durante o treinamento, o modelo é salvo no diretório "best/" sempre que a acurácia de validação (`valid_acc`) atinge um novo máximo. Isso garante que sempre tenhamos acesso ao melhor modelo treinado.
+2. **Parada Antecipada**: O treinamento é interrompido se a acurácia de validação não melhorar após 3 épocas (`patience=3`). Isso evita o desperdício de recursos computacionais e previne o overfitting.
+3. **Treinador**: O treinador é configurado para usar aceleração automática e aproveitar a GPU, se disponível. Os logs do treinamento são salvos no diretório "./logs". O número máximo de épocas para o treinamento é definido como 100.
+4. **Treinamento**: O modelo é então treinado usando os dados de treino e validação fornecidos.
+
+Este processo garante que o modelo seja treinado de forma eficiente e eficaz, levando a um modelo de alta performance.
+
+## 📊 6. Avaliação do Modelo ResNet
+
+Nesta seção, mergulharemos profundamente na avaliação do nosso modelo de aprendizado de máquina. A avaliação é uma etapa crucial no processo de aprendizado de máquina, pois nos permite entender o desempenho do nosso modelo. Vamos explorar várias métricas e técnicas para avaliar a precisão, a robustez e a eficácia geral do nosso modelo. Isso nos ajudará a entender onde o nosso modelo brilha e onde ele pode precisar de melhorias. 
 
 
 
