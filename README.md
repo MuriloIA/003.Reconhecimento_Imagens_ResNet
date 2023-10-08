@@ -1,4 +1,4 @@
-# <center>Classificação de CIFAR-10 com ResNet18:<br> Uma Implementação em PyTorch 2.0, Lightning e Torchvision</center>
+# <center>Classificação de CIFAR-10 com ResNet:<br> Uma Implementação em PyTorch 2.0, Lightning e Torchvision</center>
 
 ## 📚 1. Introdução
 
@@ -204,5 +204,39 @@ Este processo garante que o modelo seja treinado de forma eficiente e eficaz, le
 
 Nesta seção, mergulharemos profundamente na avaliação do nosso modelo de aprendizado de máquina. A avaliação é uma etapa crucial no processo de aprendizado de máquina, pois nos permite entender o desempenho do nosso modelo. Vamos explorar várias métricas e técnicas para avaliar a precisão, a robustez e a eficácia geral do nosso modelo. Isso nos ajudará a entender onde o nosso modelo brilha e onde ele pode precisar de melhorias. 
 
+### 6.1 Processo de Aprendizado do ResNet
 
+Neste tópico, vamos visualizar o processo de aprendizado da arquitetura ResNet através de gráficos que mostram a acurácia e o erro de treinamento e validação para cada época. Esses gráficos são ferramentas poderosas que nos permitem entender como nosso modelo está aprendendo durante o treinamento.
+
+Ao observar a acurácia de treinamento e validação, podemos ver como nosso modelo está se saindo em termos de aprendizado e generalização. Idealmente, queremos ver a acurácia de treinamento e validação aumentar ao longo do tempo.
+
+Da mesma forma, ao olhar para o erro de treinamento e validação, podemos ver quão longe as previsões do nosso modelo estão dos rótulos verdadeiros. Neste caso, nosso objetivo é minimizar esses erros ao longo do tempo.
+
+### 6.2 Relatório de Classificação
+
+Neste tópico, vamos explorar o desempenho do nosso modelo ResNet em detalhes. Para isso, vamos avaliar as métricas de Accuracy (Acurácia), Precision (Precisão), Recall (Revocação) e F1-Score. Essas métricas nos fornecem uma visão abrangente da performance do nosso modelo.
+
+- **Accuracy (Acurácia)**: Esta métrica nos dá uma visão geral de quão bem o nosso modelo está performando. É calculada como a proporção de previsões corretas feitas pelo modelo em relação ao total de previsões. A fórmula para a acurácia é:
+
+    $$\text{Accuracy} = \frac{\text{Número de previsões corretas}}{\text{Número total de previsões}}$$
+
+- **Precision (Precisão)**: Esta métrica nos diz qual proporção das identificações positivas foi realmente correta. É calculada como:
+
+    $$\text{Precision} = \frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} + \text{Falsos Positivos}}$$
+
+- **Recall (Revocação)**: Esta métrica nos diz qual proporção dos positivos reais foi identificada corretamente. É calculada como:
+
+    $$\text{Recall} = \frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} + \text{Falsos Negativos}}$$
+
+- **F1-Score**: Esta é uma métrica que combina Precision e Recall em um único número. O F1-Score é a média harmônica de Precision e Recall, e dá mais peso a valores baixos, de forma que ambas as métricas devem ser altas para obter um F1-Score alto. É calculado como:
+
+    $$\text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
+
+## 🗺️ 7. Mapas de Recursos
+
+Neste tópico, vamos explorar os mapas de recursos gerados pelo nosso modelo ResNet. Os mapas de recursos, também conhecidos como mapas de ativação, são uma maneira eficaz de entender o que uma rede neural convolucional aprendeu durante o treinamento.
+
+Cada camada em uma rede neural convolucional produz um mapa de recursos como saída. Esses mapas de recursos representam as características que a rede extraiu da imagem de entrada em cada camada. Ao visualizar esses mapas de recursos, podemos ter uma ideia das características que a rede considera importantes para fazer suas previsões.
+
+Neste tópico, vamos analisar os mapas de recursos do nosso modelo treinado. Isso nos permitirá entender melhor como o nosso modelo está tomando suas decisões e quais características ele está usando para fazer suas previsões.
 
