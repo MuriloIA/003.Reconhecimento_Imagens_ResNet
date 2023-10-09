@@ -212,6 +212,8 @@ Ao observar a acurácia de treinamento e validação, podemos ver como nosso mod
 
 Da mesma forma, ao olhar para o erro de treinamento e validação, podemos ver quão longe as previsões do nosso modelo estão dos rótulos verdadeiros. Neste caso, nosso objetivo é minimizar esses erros ao longo do tempo.
 
+<img src="imagens/grafico.png">
+
 ### 6.2 Relatório de Classificação
 
 Neste tópico, vamos explorar o desempenho do nosso modelo ResNet em detalhes. Para isso, vamos avaliar as métricas de Accuracy (Acurácia), Precision (Precisão), Recall (Revocação) e F1-Score. Essas métricas nos fornecem uma visão abrangente da performance do nosso modelo.
@@ -232,6 +234,35 @@ Neste tópico, vamos explorar o desempenho do nosso modelo ResNet em detalhes. P
 
     $$\text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
+---
+
+|           | precision | recall | f1-score | support |
+|-----------|-----------|--------|----------|---------|
+|         0 |       0.96|   0.94 |     0.95 |    1000 |
+|         1 |       0.98|   0.97 |     0.97 |    1000 |
+|         2 |       0.91|   0.95 |     0.93 |    1000 |
+|         3 |       0.89|   0.88 |     0.88 |    1000 |
+|         4 |       0.94|   0.97 |     0.95 |    1000 |
+|         5 |       0.91|   0.92 |     0.91 |    1000 |
+|         6 |       0.98|   0.94 |     0.96 |    1000 |
+|         7 |       0.98|   0.96 |     0.97 |    1000 |
+|         8 |       0.95|   0.97 |     0.96 |    1000 |
+|         9 |       0.95|   0.97 |     0.96 |    1000 |
+|           |           |        |          |         |
+| accuracy  |           |        |     0.94 |   10000 |
+| macro avg |       0.95|   0.94 |     0.94 |   10000 |
+|weighted avg|      0.95|   0.94 |     0.94 |   10000 |
+
+Com base nos resultados da tabela, o seu modelo ResNet apresentou um desempenho geral sólido. A precisão geral do modelo foi de 0,94, indicando que o modelo fez previsões corretas em 94% dos casos no conjunto de teste de 10.000 imagens.
+
+Ao analisar as métricas para cada classe individualmente, podemos ver que o modelo teve um desempenho excepcionalmente bom nas classes 1, 6 e 7, com uma precisão de 0,98. Isso significa que o modelo foi capaz de identificar corretamente as imagens dessas classes na maioria das vezes.
+
+As classes 0, 4, 8 e 9 também tiveram um bom desempenho, com uma precisão de mais de 0,94. No entanto, as classes 2, 3 e 5 tiveram um desempenho ligeiramente inferior em comparação com as outras classes, com uma precisão de cerca de 0,91.
+
+Em termos de recall, que é a capacidade do modelo de encontrar todas as amostras positivas, o modelo teve um desempenho semelhante em todas as classes, variando entre 0,88 e 0,97.
+
+O F1-score, que é uma média harmônica entre precisão e recall, também foi consistente em todas as classes. Isso indica que o modelo tem um bom equilíbrio entre precisão e recall.
+
 ## 🗺️ 7. Mapas de Recursos
 
 Neste tópico, vamos explorar os mapas de recursos gerados pelo nosso modelo ResNet. Os mapas de recursos, também conhecidos como mapas de ativação, são uma maneira eficaz de entender o que uma rede neural convolucional aprendeu durante o treinamento.
@@ -240,3 +271,12 @@ Cada camada em uma rede neural convolucional produz um mapa de recursos como sa�
 
 Neste tópico, vamos analisar os mapas de recursos do nosso modelo treinado. Isso nos permitirá entender melhor como o nosso modelo está tomando suas decisões e quais características ele está usando para fazer suas previsões.
 
+<img src="imagens/sapo.png">
+
+### 7.1 Saída da Camada de Convolução
+
+<img src="imagens/conv1.png">
+
+### 7.2 Saída da Função de Agregação - MaxPool2d
+
+<img src="imagens/maxpool2d.png">
