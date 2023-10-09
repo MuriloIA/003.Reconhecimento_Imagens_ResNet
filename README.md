@@ -165,8 +165,7 @@ Este bloco de código define o otimizador, o agendador e a função de custo que
 
 - `optimizer = torch.optim.AdamW(modelo.parameters(), lr=0.001, weight_decay=0.01)`: Esta linha define o otimizador como AdamW, que é uma variação do algoritmo de otimização Adam que inclui a decaimento de peso (também conhecido como regularização L2). O otimizador AdamW é conhecido por ter um bom desempenho em tarefas de aprendizado profundo. Os parâmetros do modelo são passados para o otimizador, juntamente com a taxa de aprendizado (`lr=0.001`) e o fator de decaimento de peso (`weight_decay=0.01`). A fórmula de atualização do peso no AdamW é a seguinte:
 
-$$\theta_{t+1, i} = \theta_{t, i} - \eta \left(\frac{1}{\sqrt{\hat{v}_t + \epsilon}} \cdot \hat{m}_t + w_{t, i} \cdot \theta_{t, i}\right), \forall t$$
-
+<center><img src="imagens/AdamW.png"></center>
 
 - `scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)`: Esta linha define o agendador de taxa de aprendizado, que ajusta a taxa de aprendizado durante o treinamento. Neste caso, a taxa de aprendizado é multiplicada por `gamma=0.5` a cada `step_size=10` épocas. Isso é útil para reduzir a taxa de aprendizado à medida que o treinamento progride, o que pode levar a um melhor desempenho do modelo.
 
